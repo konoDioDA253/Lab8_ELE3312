@@ -1,0 +1,17 @@
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Source\SupportFunctions\SupportFunctions.c
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Source\SupportFunctions\arm_barycenter_f32.c
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/support_functions.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\arm_math_types.h
+mytestunfailedultimatessgss\supportfunctions.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+mytestunfailedultimatessgss\supportfunctions.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\arm_math_memory.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/none.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/utils.h
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Source\SupportFunctions\arm_bitonic_sort_f32.c
+mytestunfailedultimatessgss\supportfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\PrivateInclude\arm_sorting.h
+mytestunfailedultimatessgss\supportfunctions.o: ..\..\..\..\..\..\STM32Cube\Repository\STM32Cube_FW_F4_V1.26.2\Drivers\CMSIS\DSP\Include\arm_math.h

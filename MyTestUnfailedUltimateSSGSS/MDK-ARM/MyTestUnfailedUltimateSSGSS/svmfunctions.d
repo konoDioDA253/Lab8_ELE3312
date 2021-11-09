@@ -1,0 +1,15 @@
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Source\SVMFunctions\SVMFunctions.c
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_linear_init_f32.c
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/svm_functions.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\arm_math_types.h
+mytestunfailedultimatessgss\svmfunctions.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+mytestunfailedultimatessgss\svmfunctions.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\arm_math_memory.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/none.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/utils.h
+mytestunfailedultimatessgss\svmfunctions.o: C:\Users\Bouh\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/svm_defines.h
