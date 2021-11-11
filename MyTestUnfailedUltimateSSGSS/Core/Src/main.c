@@ -34,7 +34,8 @@
 
 #include "MCUFRIEND_kbv.h"
 #include "math.h"
-#include "ball.h"
+#include "shapes.h"
+#include "tetris.h"
 
 //#include "MCUFRIEND_kbv.h"
 /* USER CODE END Includes */
@@ -77,54 +78,6 @@
 
 /* USER CODE BEGIN PV */
 
-///////////////////////LAB4 VARIABLES
-int hour = 0;
-int min = 0;
-int sec = 0;
-int tauxRafraichissement = 200; //en ms
-volatile int milli = 0;
-volatile int token = 1;
-
-///////////////////////LAB6 VARIABLES
-//float tab_value[256]; 
-float tab_value_30inputs[30]; 
-float tab_output[256]; 
-float FFT_value[256];
-float abs_value[128];
-//uint32_t blockSize = BLOCK_SIZE;
-uint32_t numBlocks = 256;
-
-///////////////////////LAB7 VARIABLES
-//volatile int flag_done = -1;
-volatile int current_state = 0;
-volatile int key = 1;		
-volatile float tempsDePesee = 0;
-//volatile int local_time = 0;
-const float pi = 3.14159265358979323846;
-
-volatile float positionXball; 
-volatile float positionYball; //Ball
-volatile float positionYball_initiale;
-volatile float positionXball_initiale;
-float positionXpig;
-float positionYpig;  // Pig
-volatile float vx ;	//is related to y coordinate for LCD
-volatile float vy ;	//is related to x coordinate for LCD	
-volatile float ay = -0.01;
-volatile int compteur = 0;		
-volatile int compteur2 = 0;		
-float v_initial;	
-volatile int flag_state = 0;
-volatile int compteur3 = 0;		
-
-///////////////////////LAB8 VARIABLES
-#define TABLE_LENGTH 8000 
-uint32_t tab_value1[TABLE_LENGTH];
-uint32_t tab_value2[TABLE_LENGTH];
-volatile uint32_t * tab = tab_value1;
-volatile int flag_done = 0;
-float A = 0.0;
-float k = 0.65;
 
 /* USER CODE END PV */
 
@@ -239,69 +192,41 @@ int main(void)
 	//LCD_DrawFastHLine(0, 160, 240, YELLOW);
 //	LCD_DrawCircle(N/2, N/2, 15, WHITE);
 	//LCD_DrawRect(20, 40, 202, 240, RED);
-	LCD_Printf("! HELLO ! ");
+//	LCD_Printf("! HELLO ! ");
 //	HAL_TIM_Base_Start(&htim2); 
 //	HAL_TIM_Base_Start_IT(&htim2);
 
 //	HAL_ADC_Start_DMA(&hadc1, tab, TABLE_LENGTH);
+	LCD_FillScreen(DARKGREY); 
+	initializeField();
+	displayField();
 	
-
+	//PWM TRIG START
+	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 //	
-	int i;
-
-	
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_3, (uint32_t *)tab, TABLE_LENGTH);		
-	tab = tab_value2;
-		
-	
-	double periode = 100.00;
-	int a = 0;
-	int zz= 0;
-	double constante = pow(5, 0.1666666666667);
 	
   while (1)
   {
-		
-		flag_done = 0;
-		
-		for (i=0;i<TABLE_LENGTH;i++) {
-				double modulo = (i%((int)(periode)));
-				A = 1+k*sin(4*pi*((float) i)*(1/8000.0));
-				double value = 1000*A;
-				if(modulo < periode/2)
-					value = 0*A;
-				tab[i]=(int) value;
-		}
-		
-		while (flag_done == 0);
-		
-		if(a==5){
-			periode/=constante;
-			a=0;
-			zz++;
-		}
-		
-		if(zz==6){
-			constante = 1/constante; 
-		}
-		
-		
-		if(zz==12){
-			constante = 1/constante; 
-			zz=0;
-			periode=100.00;
-		}
-		
-		a++;
-		
+				
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 		
+		//Random movements for Tetris
+		if (updateField()){ // Quand "updateField" renvoie 1, la partie est perdue.
+        LCD_FillScreen(RED); 
+        while(1);
+    }
+    HAL_Delay(25);
+//    randomDisplaceOrRotate(); // Mouvements aléatoires pour simuler une partie.
+		selectRow(1);
+    HAL_Delay(10);
+
+    HAL_Delay(75);
   }
   /* USER CODE END 3 */
 }
@@ -365,45 +290,57 @@ HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
 return ch;
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) 
-{
- if (htim->Instance == TIM2) 
-	{
-		HAL_ADC_Start(&hadc1);
-		HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_5);
-//		vx = 1/10; //constante
-//		positionYball = positionYball + 2.5;// vx*10;
-//		//if (vy !=0)	vy = vy + ay;
-//		vy = vy + ay;
-//		positionXball = positionXball + vy*10;
-//		
-//		//Did the user win?
-//		if (
-//			((positionYpig-positionYball)*(positionYpig-positionYball)
-//			+ (positionXpig-positionXball)*(positionXpig-positionXball)) <= 900
-//		) 	flag_done = 1;// Win
-//		else if (positionYball > 320 || positionXball > 240 || positionXball < 0) flag_done = 2;// Sort de l'écran donc loose
-//		else if (positionYball >= 150 && positionYball <= 170 && positionXball <= 120) flag_done = 2;// Toucher le mur donc loose 
-//		else flag_done = -1; //rien ne s'est passé
-	}
-}
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) 
+//{
+// if (htim->Instance == TIM2) 
+//	{
+//		HAL_ADC_Start(&hadc1);
+//		HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_5);
+//	}
+//}
 
 void HAL_SYSTICK_Callback(void) 
 {    
-    static int local_time= 0;
-    local_time++;
+	 static bool left = false;
+    static bool right = false;
+    static bool rotate = false;
+    int row = readCol();
+    if (row == 1){
+        if (!left)
+            displaceTetrimino(-1, 0, &tetrimino);
+        left = true;
+    }
+    else {
+        left = false;
+    }
+    if (row == 2){
+        if (!right)
+            displaceTetrimino(1, 0, &tetrimino);
+        right = true;
+    }
+    else {
+        right = false;
+    }
+    if (row == 4){
+        if (!rotate)
+            rotateTetrimino(&tetrimino);
+        rotate = true;
+    }
+    else {
+        rotate = false;
+    }
 }
 
 
-void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
-	
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_3, (uint32_t *)tab, TABLE_LENGTH);
+//void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
+//	
+//	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_3, (uint32_t *)tab, TABLE_LENGTH);
 
-	if (tab == tab_value1) tab = tab_value2;
-	else tab = tab_value1;
-	
-  flag_done	= 1;
-}
+//	if (tab == tab_value1) tab = tab_value2;
+//	else tab = tab_value1;
+//	
+//  flag_done	= 1;
+//}
 /* USER CODE END 4 */
 
 /**

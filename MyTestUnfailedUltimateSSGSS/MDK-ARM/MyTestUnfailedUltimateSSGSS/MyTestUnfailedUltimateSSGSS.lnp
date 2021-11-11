@@ -2,6 +2,8 @@
 "mytestunfailedultimatessgss\startup_stm32f401xe.o"
 "mytestunfailedultimatessgss\mcufriend_kbv.o"
 "mytestunfailedultimatessgss\ball.o"
+"mytestunfailedultimatessgss\shapes.o"
+"mytestunfailedultimatessgss\tetris.o"
 "mytestunfailedultimatessgss\main.o"
 "mytestunfailedultimatessgss\gpio.o"
 "mytestunfailedultimatessgss\adc.o"
@@ -31,7 +33,7 @@
 "mytestunfailedultimatessgss\stm32f4xx_hal_uart.o"
 "mytestunfailedultimatessgss\system_stm32f4xx.o"
 "..\..\..\..\..\..\..\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\DSP\Lib\ARM\arm_cortexM4lf_math.lib"
---library_type=microlib --strict --scatter "MyTestUnfailedUltimateSSGSS\MyTestUnfailedUltimateSSGSS.sct"
+--strict --scatter "MyTestUnfailedUltimateSSGSS\MyTestUnfailedUltimateSSGSS.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "MyTestUnfailedUltimateSSGSS.map" -o MyTestUnfailedUltimateSSGSS\MyTestUnfailedUltimateSSGSS.axf

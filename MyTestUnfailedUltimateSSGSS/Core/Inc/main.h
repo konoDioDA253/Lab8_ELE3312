@@ -84,6 +84,8 @@ void Error_Handler(void);
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
+#define PWM_TRIG_TIM2_CH1_Pin GPIO_PIN_15
+#define PWM_TRIG_TIM2_CH1_GPIO_Port GPIOA
 #define R3_Pin GPIO_PIN_10
 #define R3_GPIO_Port GPIOC
 #define R4_Pin GPIO_PIN_12

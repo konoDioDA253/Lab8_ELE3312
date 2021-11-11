@@ -189,7 +189,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F401xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;          ../Drivers/STM32F4xx_HAL_Driver/Inc;          ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;          ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;          ../Drivers/CMSIS/Include;          ..\..\..\..\..\..\STM32Cube\Repository\STM32Cube_FW_F4_V1.26.2\Drivers\CMSIS\DSP\Include</IncludePath>
+              <IncludePath>../Core/Inc;             ../Drivers/STM32F4xx_HAL_Driver/Inc;             ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;             ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;             ../Drivers/CMSIS/Include;             ..\..\..\..\..\..\STM32Cube\Repository\STM32Cube_FW_F4_V1.26.2\Drivers\CMSIS\DSP\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -402,6 +402,16 @@
               <FileName>ball.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\Src\ball.c</FilePath>
+            </File>
+            <File>
+              <FileName>shapes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\shapes.c</FilePath>
+            </File>
+            <File>
+              <FileName>tetris.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\tetris.c</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>

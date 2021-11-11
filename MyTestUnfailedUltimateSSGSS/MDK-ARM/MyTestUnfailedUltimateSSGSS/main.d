@@ -44,4 +44,6 @@ mytestunfailedultimatessgss\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 mytestunfailedultimatessgss\main.o: ../Core/Inc/MCUFRIEND_kbv.h
 mytestunfailedultimatessgss\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 mytestunfailedultimatessgss\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-mytestunfailedultimatessgss\main.o: ../Core/Inc/ball.h
+mytestunfailedultimatessgss\main.o: ../Core/Inc/shapes.h
+mytestunfailedultimatessgss\main.o: ../Core/Inc/tetris.h
+mytestunfailedultimatessgss\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
